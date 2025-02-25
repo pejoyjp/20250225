@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import UploadArea from "./UploadArea";
+import UploadArea from "./uploadArea";
 import PDFViewer from "./PDFViewer";
 
 const MainBar = () => {
