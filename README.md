@@ -26,7 +26,7 @@
 
 1. **克隆仓库**：
    ```bash
-   git clone <repository-url>
+   git clone [<repository-url>](https://github.com/pejoyjp/20250225)
    ```
    
 2. **进入项目目录**：
