@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# PDF.ai 前端项目
 
-## Getting Started
+## 项目简介
 
-First, run the development server:
+回答简约思维面试题，一个Web应用，允许用户上传、查看、旋转并下载多个PDF文件。该项目提供PDF页面的缩放、旋转等功能，支持单页旋转或整体旋转，并可下载修改后的PDF文件。前端采用 React、Tailwind CSS 和 Next.js 进行开发，界面响应式设计，适配不同设备。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 功能特性
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **PDF 上传**：支持拖拽上传或选择文件方式上传多个PDF。
+- **PDF 预览**：支持PDF文档页面的预览、缩放和旋转。
+- **旋转控制**：可单独旋转页面或一键旋转所有页面。
+- **下载功能**：支持下载旋转后的PDF文件。
+- **响应式设计**：界面适配不同屏幕尺寸，支持桌面端和移动端。
+- **导航栏和页脚**：包含自定义导航菜单和页脚，提高用户体验。
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 技术栈
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **React**：构建用户界面。
+- **Next.js**：支持服务端渲染和静态生成。
+- **Tailwind CSS**：基于实用类的CSS框架。
+- **React-PDF**：用于在React应用中渲染PDF文档。
+- **pdf-lib**：用于处理PDF的JavaScript库，支持旋转等操作。
+- **File Saver**：前端文件下载工具。
 
-## Learn More
+## 安装与运行
 
-To learn more about Next.js, take a look at the following resources:
+1. **克隆仓库**：
+   ```bash
+   git clone <repository-url>
+   ```
+   
+2. **进入项目目录**：
+   ```bash
+   cd pdf-ai-frontend
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **安装依赖**：
+   ```bash
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **启动开发服务器**：
+   ```bash
+   npm run dev
+   ```
 
-## Deploy on Vercel
+5. **在浏览器中打开**：
+   ```
+   http://localhost:3000
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 组件介绍
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **UploadArea**：文件上传组件，支持拖拽和文件选择。
+- **PDFViewer**：PDF预览组件，提供缩放和旋转功能。
+- **Navbar**：导航栏组件，支持桌面端和移动端菜单。
+- **Footer**：页脚组件，展示产品相关信息。
+- **MainBar**：主要界面组件，整合文件上传和PDF预览功能。
+
+## 使用指南
+
+### 上传PDF
+点击上传区域选择PDF文件，或直接拖拽文件到上传区域，即可预览PDF内容。
+
+### 预览和旋转页面
+点击单个页面可旋转该页，使用“旋转所有”按钮可一次性旋转所有页面。同时可通过缩放按钮调整查看比例。
+
+### 下载PDF
+旋转后可点击“下载所有”按钮，获取修改后的PDF文件。
+
+### 导航菜单
+在桌面端显示完整导航链接，如定价、使用案例等。移动端采用汉堡菜单便于操作。
+
+## 贡献指南
+
+欢迎通过 Fork 代码库、优化功能或提交 Issue 进行贡献。
+
+## 许可证
+
+本项目基于 MIT 许可证开源，详见 [LICENSE](LICENSE) 文件。
+
