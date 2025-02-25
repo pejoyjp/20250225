@@ -38,7 +38,7 @@ PageWrapper.displayName = "PageWrapper";
 const PDFViewer = ({ file, onRemove }) => {
   const [numPages, setNumPages] = useState(null);
   const [rotations, setRotations] = useState({});
-  const [scale, setScale] = useState(0.4);
+  const [scale, setScale] = useState(0.3);
   const [pageDimensions, setPageDimensions] = useState({});
   const [pendingScale, setPendingScale] = useState(null);
 
@@ -50,11 +50,12 @@ const PDFViewer = ({ file, onRemove }) => {
     if (scale >= 0.45) return "grid-cols-3";
     if (scale >= 0.4) return "grid-cols-4";
     if (scale >= 0.35) return "grid-cols-5";
-    if (scale >= 0.3) return "grid-cols-6";
+    if (scale >= 0.3) return "grid-cols-6";  
     if (scale >= 0.25) return "grid-cols-8";
     if (scale >= 0.2) return "grid-cols-10";
     return "grid-cols-6";
   }, [scale]);
+  
 
   const rotatePage = (pageIndex) => {
     setRotations((prev) => ({
@@ -71,7 +72,7 @@ const PDFViewer = ({ file, onRemove }) => {
   };
 
   const zoomIn = () => setPendingScale((prev) => Math.min((prev || scale) + 0.05, 1));
-  const zoomOut = () => setPendingScale((prev) => Math.max((prev || scale) - 0.1, 0.2));
+  const zoomOut = () => setPendingScale((prev) => Math.max((prev || scale) - 0.05, 0.2));
 
   useEffect(() => {
     if (pendingScale === null) return;
